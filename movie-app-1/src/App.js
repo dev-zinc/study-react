@@ -1,8 +1,14 @@
- 
+ import { useState, useEffect } from "react";
+
 function App() {
+  const [toDo, setToDo] = useState("");
+  const onChange = (event) => setToDo(event.target.value);
+
   return (
     <div>
-      <h1>Boilerplate of Clear React Proj.</h1> 
+      <form>
+        <input onChange={onChange} value={toDo} type="text" placeholder="Write..." />
+      </form>
     </div>
   );
 }
